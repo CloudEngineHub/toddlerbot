@@ -61,7 +61,7 @@ Start the depth estimation server.
 python toddlerbot/skill_classifier/run_foundation_stereo.py
 ```
 
-Specify the checkpoint path for each trained skill in `POLICY_CONFIGS` in `run_multiple_policy.py`, then run the multi-skill locomotion system.
+Specify the checkpoint path for each trained skill in `POLICY_CONFIGS` in `run_multiple_policy.py` (policy checkpoints can be downloaded from [Google Drive](https://drive.google.com/drive/u/1/folders/1d0UGRc3-3wxMcqrZSlqRXkSnwFSC8Xk-)), then run the multi-skill locomotion system.
 ```bash
 python toddlerbot/policies/run_multiple_policy.py --skill-classifier <classifier_checkpoint>
 ```

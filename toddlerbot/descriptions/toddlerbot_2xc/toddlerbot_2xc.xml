@@ -46,7 +46,7 @@
           class="XC330"/>
         <inertial pos="0.0 0.0 0.0033841" mass="0.003"
           fullinertia="8.71388e-08 8.71388e-08 1.55295e-07 -1.01369e-37 6.75285e-37 1.49136e-36"/>
-        <geom type="mesh" class="visual" pos="0.0 0.0 0.0033841" quat="1.0 -0.0 0.0 0.0"
+        <geom type="mesh" class="visual" pos="0.0 0.0 0.0033841" quat="1.0 0.0 0.0 0.0"
           mesh="neck_yaw_gear_drive_visual" material="neck_yaw_gear_drive_visual_material"/>
       </body>
       <body name="neck_yaw_link" pos="-0.00050787 -0.0 0.124" quat="1 0 0 0">
@@ -197,11 +197,10 @@
                         fullinertia="2.88034e-05 3.04307e-05 8.87438e-06 6.52846e-11 2.12102e-06 2.65224e-10"/>
                       <geom type="mesh" class="visual" pos="0.0358432 -7e-08 -0.0267229" quat="-1.0 -0.0 -0.0 -0.0"
                         mesh="left_ankle_roll_link_visual" material="ankle_roll_link_visual_material"/>
-                      <geom type="mesh" class="collision" mesh="left_ankle_roll_link_collision"
-                        pos="0.0358432 -7e-08 -0.0267229" quat="-1.0 -0.0 -0.0 -0.0"
-                        name="left_ankle_roll_link_collision" material="ankle_roll_link_visual_material" contype="1"
-                        conaffinity="1"/>
-                      <site name="left_foot_center" pos="0.0358432 -7e-08 -0.0374345" type="sphere" size="0.005"
+                      <geom type="box" class="collision" pos="0.039 0.0 -0.032" quat="-1.0 -0.0 -0.0 -0.0"
+                        size="0.055 0.021 0.007" name="left_ankle_roll_link_collision"
+                        material="ankle_roll_link_visual_material"/>
+                      <site name="left_foot_center" pos="0.039 0.0 -0.037" type="sphere" size="0.005"
                         rgba="0.9 0.1 0.1 0.8"/>
                     </body>
                   </body>
@@ -227,7 +226,7 @@
               <geom type="mesh" class="visual" pos="0.0190075 -3.33e-06 -0.0169158" quat="1.0 0.0 0.0 0.0"
                 mesh="right_hip_roll_link_visual" material="hip_roll_link_visual_material"/>
               <body name="right_hip_yaw_link" pos="0.019 0.0 -0.033" quat="1 0 0 0">
-                <joint axis="-0.0 -0.0 -1.0" name="right_hip_yaw_driven" type="hinge"
+                <joint axis="0.0 -0.0 -1.0" name="right_hip_yaw_driven" type="hinge"
                   range="-1.5707963267948948 1.5707963267948983"/>
                 <inertial pos="-0.00967257 -0.00117152 -0.0353303" mass="0.159688"
                   fullinertia="7.87648e-05 6.10535e-05 5.28244e-05 -1.39863e-06 -4.42456e-06 -4.13719e-06"/>
@@ -270,11 +269,10 @@
                         fullinertia="2.88034e-05 3.04307e-05 8.87438e-06 6.52846e-11 2.12102e-06 2.65224e-10"/>
                       <geom type="mesh" class="visual" pos="0.0358432 -7e-08 -0.0267229" quat="1.0 0.0 -0.0 -0.0"
                         mesh="right_ankle_roll_link_visual" material="ankle_roll_link_visual_material"/>
-                      <geom type="mesh" class="collision" mesh="right_ankle_roll_link_collision"
-                        pos="0.0358432 -7e-08 -0.0267229" quat="1.0 0.0 -0.0 -0.0"
-                        name="right_ankle_roll_link_collision" material="ankle_roll_link_visual_material" contype="1"
-                        conaffinity="1"/>
-                      <site name="right_foot_center" pos="0.0358432 -7e-08 -0.0374345" type="sphere" size="0.005"
+                      <geom type="box" class="collision" pos="0.039 -0.0 -0.032" quat="1.0 0.0 -0.0 -0.0"
+                        size="0.055 0.021 0.007" name="right_ankle_roll_link_collision"
+                        material="ankle_roll_link_visual_material"/>
+                      <site name="right_foot_center" pos="0.039 -0.0 -0.037" type="sphere" size="0.005"
                         rgba="0.9 0.1 0.1 0.8"/>
                     </body>
                   </body>
@@ -362,7 +360,7 @@
                       range="-2.0943951023937997 2.094395102392591" class="2XL430"/>
                     <inertial pos="-0.0 0.00503438 -0.0" mass="0.003"
                       fullinertia="1.33264e-07 1.33264e-07 2.24433e-07 1.59295e-15 1.27162e-37 -6.47459e-39"/>
-                    <geom type="mesh" class="visual" pos="-0.0 0.00503438 -0.0" quat="1.0 0.0 0.0 -0.0"
+                    <geom type="mesh" class="visual" pos="-0.0 0.00503438 -0.0" quat="1.0 -0.0 0.0 -0.0"
                       mesh="left_wrist_gear_drive_visual" material="wrist_gear_drive_visual_material"/>
                   </body>
                   <body name="left_hand" pos="-0.019 -0.022 -0.0" quat="1 0 0 0">
@@ -372,9 +370,9 @@
                       fullinertia="2.98315e-05 2.66721e-05 1.70274e-05 -1.04236e-06 -7.6963e-08 -4.66231e-07"/>
                     <geom type="mesh" class="visual" pos="0.0176215 0.00315051 -0.0386545" quat="1.0 0.0 0.0 0.0"
                       mesh="left_hand_visual" material="hand_visual_material"/>
-                    <geom type="box" class="collision" pos="0.0205398 0.0045 -0.047" quat="1.0 0.0 0.0 0.0"
+                    <geom type="box" class="collision" pos="0.0174602 0.0045 -0.047" quat="1.0 0.0 0.0 0.0"
                       size="0.037 0.025 0.01" name="left_hand_collision" material="hand_visual_material"/>
-                    <site name="left_hand_center" pos="0.0205398 0.0045 -0.057" type="sphere" size="0.005"
+                    <site name="left_hand_center" pos="0.0174602 0.0045 -0.057" type="sphere" size="0.005"
                       rgba="0.9 0.1 0.1 0.8"/>
                   </body>
                 </body>
@@ -471,9 +469,9 @@
                       fullinertia="2.98333e-05 2.66735e-05 1.70278e-05 -1.04248e-06 -7.75395e-08 -4.66192e-07"/>
                     <geom type="mesh" class="visual" pos="-0.0203795 -0.00314939 -0.0386553" quat="-1.0 0.0 0.0 0.0"
                       mesh="right_hand_visual" material="hand_visual_material"/>
-                    <geom type="box" class="collision" pos="-0.0174602 -0.0045 -0.047" quat="-1.0 0.0 0.0 0.0"
+                    <geom type="box" class="collision" pos="-0.0205398 -0.0045 -0.047" quat="-1.0 0.0 0.0 0.0"
                       size="0.037 0.025 0.01" name="right_hand_collision" material="hand_visual_material"/>
-                    <site name="right_hand_center" pos="-0.0174602 -0.0045 -0.057" type="sphere" size="0.005"
+                    <site name="right_hand_center" pos="-0.0205398 -0.0045 -0.057" type="sphere" size="0.005"
                       rgba="0.9 0.1 0.1 0.8"/>
                   </body>
                 </body>

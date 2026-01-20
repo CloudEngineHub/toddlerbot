@@ -12,9 +12,13 @@ import numpy.typing as npt
 from scipy.spatial.transform import Rotation as R
 
 from toddlerbot.actuation import dynamixel_cpp
-from toddlerbot.sensing.IMU import ThreadedIMU
 from toddlerbot.sim import BaseSim, Obs
 from toddlerbot.sim.robot import Robot
+
+try:
+    from toddlerbot.sensing.IMU import ThreadedIMU
+except Exception as e:
+    print(f"IMU module not found: {e}")
 
 
 class RealWorld(BaseSim):
@@ -150,7 +154,7 @@ class RealWorld(BaseSim):
         # Get the IMU data (optional)
         quat, ang_vel = None, None
         if self.imu:
-            quat, _, ang_vel = self.imu.get_latest_state()
+            _, _, quat, _, _, ang_vel = self.imu.get_latest_state()
 
         return Obs(
             time=time.monotonic(),
